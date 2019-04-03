@@ -12,18 +12,26 @@ for x in range(0, 500):
     statistics = player.find_all('td')
     player_name = player.td.find('td', class_='player-label')
     #insert function to pass player name to database
+
     player_team = statistics.td.find('a', class_='center')
     player_team = player_team.text
     #insert function to pass player team to database
+
     playerpositiontemp = statistics[4]
     playerposition = playerpositiontemp.text
     #insert function to pass player position to database
+
     playerpointstemp = statistics[5]
-    playerpoints = playerpositiontemp.text
+    playerpoints = playerpositiontemp.float
     #insert function to pass player points to database
+
     playergamestemp = statistics[6]
-    playergames = playergamestemp.text
+    playergames = playergamestemp.float
     #insert function to pass player games to database
+
+    playeravgtemp = statistics[7]
+    playeravg = playeravgtemp.float
+    #insert function to pass player avg to database
 
 
 
