@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 
 driver = webdriver.Chrome("C:/Users/rocky/Downloads/chromedriver_win32/chromedriver.exe")
-url = 'https://fantasydata.com/nfl-stats/fantasy-football-leaders?season=2018'
+url = 'https://fantasydata.com/user/login?redirecturi=/'
 def site_log():
     driver.get(url)
     driver.find_element_by_id("username").send_keys("rockysbuddy.colin@gmail.com")
