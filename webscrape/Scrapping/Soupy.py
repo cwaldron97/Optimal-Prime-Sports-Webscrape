@@ -10,6 +10,7 @@ Players = html_soup.find_all('tr')
 for x in range(0, 500):
     player = Players[x]
     statistics = player.find_all('td')
+    print(player)
     player_name = player.td.find('td', class_='player-label')
     #insert function to pass player name to database
 
