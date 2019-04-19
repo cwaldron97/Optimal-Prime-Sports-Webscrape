@@ -3,15 +3,15 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 
 driver = webdriver.Chrome("C:/Users/rocky/Downloads/chromedriver_win32/chromedriver.exe")
-url = 'https://fantasydata.com/user/login?redirecturi=/'
-def site_log():
-    driver.get(url)
-    driver.find_element_by_id("username").send_keys("rockysbuddy.colin@gmail.com")
-    driver.find_element_by_id("pass").send_keys("kfj4DJP6WV2PUfZ")
-    driver.find_element_by_id("loginbutton").click()
+loginurl = 'https://fantasydata.com/user/login?redirecturi=/'
+driver.get(loginurl)
+driver.find_element_by_id("username").send_keys("rockysbuddy.colin@gmail.com")
+driver.find_element_by_id("password").send_keys("kfj4DJP6WV2PUfZ")
+driver.find_element_by_tag_name('button').click()
 
-response = get(url)
-html_soup = BeautifulSoup(response.text, 'html.parser')
+dataurl = 'https://fantasydata.com/nfl-stats/fantasy-football-leaders?season=2018'
+
+html_soup = BeautifulSoup(dataurl, 'html.parser')
 type(html_soup)
 Players = html_soup.find('table').find('tr')
 for x in range(0,49):
